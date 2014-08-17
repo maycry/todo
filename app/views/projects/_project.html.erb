@@ -1,5 +1,12 @@
 <div class="project-item" data-id="<%= project.id %>">
   <%= render 'project_header', project: project %>
+  <div class="create-task">
+    <%= form_for(Task.new, remote: :true) do |f| %>
+      <%= f.hidden_field :project_id, value: project.id %>
+      <%= f.text_field :name %>
+      <%= f.submit %>
+    <% end %>
+  </div>
   <ul>
     <%= render project.tasks if project.tasks %>
   </ul>
