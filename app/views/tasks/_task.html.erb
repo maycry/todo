@@ -1,1 +1,5 @@
-<li><%= task.name %></li>
+<li class="task_<%= task.id %>">
+  <%= check_box_tag "task_#{task.id}", 1, !task_status?(task.status), data: { remote: true} %>
+  <%= task.name %>
+  <%= link_to "x", task, method: :delete, remote: true %>
+</li>

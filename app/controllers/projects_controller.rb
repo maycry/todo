@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new project_params
+    @project = Project.new(project_params)
     if @project.save 
       respond_to :js 
     end
@@ -28,8 +28,9 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:id])
-    @project.destroy
-    respond_to :js
+    if @project.destroy
+      respond_to :js
+    end
   end
 
   private

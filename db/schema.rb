@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20140817112407) do
 
   create_table "tasks", force: true do |t|
     t.string   "name"
-    t.string   "status"
+    t.string   "status",     default: "incomplete"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
