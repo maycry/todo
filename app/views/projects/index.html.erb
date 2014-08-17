@@ -1,3 +1,4 @@
-<% @projects.each do |project| %>
-  <p><%= project.name %></p>
-<% end %>
+<div class="projects-list">
+  <%= render @projects %>
+</div>
+<%= link_to "Add Project", new_project_path, remote: :true , id: "add-project"%>

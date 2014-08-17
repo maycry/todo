@@ -1,0 +1,6 @@
+<div class="project-item" data-id="<%= project.id %>">
+  <%= render 'project_header', project: project %>
+  <ul>
+    <%= render project.tasks if project.tasks %>
+  </ul>
+</div>
