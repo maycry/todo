@@ -10,7 +10,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development do
   gem "better_errors", "~> 1.1.0"
@@ -18,4 +18,14 @@ group :development do
   gem 'spring'
 end
 
+group :development, :test do
+  gem "rspec-rails", "~> 2.0"
+end
+
+group :test do
+  gem 'capybara', '~> 2.4.1'
+  gem 'guard-rspec', '~> 4.3.1'
+  gem 'selenium-webdriver', '~> 2.42.0'
+  gem 'database_cleaner', '~> 1.3.0'
+end
 
