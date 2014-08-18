@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe "Projects" do
   it "displays project" do
-    Project.create!(name: "Just project")
+    project = create(:project)
     visit projects_path
-    expect(page).to have_content("Just project")
+    expect(page).to have_content(project.name)
   end
 
   it "create project", js: true do
@@ -14,7 +14,7 @@ describe "Projects" do
   end
 
   it "edit project", js: true do
-    Project.create!(name: "Just project")
+    project = create(:project)
     visit projects_path
     click_link "Edit"
     fill_in "project_name", with: "Another project"
@@ -23,20 +23,21 @@ describe "Projects" do
   end
 
   it "delete project", js: true do
-    Project.create!(name: "Just project")
+    project = create(:project)
     visit projects_path
+    #save_and_open_page
     click_link "Remove"
-    expect(page).not_to have_content("Just project")
+    expect(page).not_to have_content(project.name)
   end
 
 end
 
 describe "Tasks" do
   it "displays task" do
-    Project.create!(name: "Just project")
-    Task.create!(name: "paint fence", project_id: 1)
+    project = create(:project)
+    task = create(:task)
     visit projects_path
-    expect(page).to have_content("paint fence")
+    expect(page).to have_content(task.name)
   end
 
   it "create task", js: true do
@@ -45,6 +46,16 @@ describe "Tasks" do
     expect(page).to have_content("Alpha Project")
     create_task
     expect(page).to have_content("Alpha Task")
+  end
+
+  it "edit task" do
+    project = create(:project)
+    task = create(:task)
+    visit projects_path
+    click_link "Edit Task"
+    fill_in "task_name", with: "Task changed"
+    click_button "Update Task"
+    expect(page).to have_content("Task changed") 
   end
 
   it "delete task", js: true do
