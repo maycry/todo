@@ -1,0 +1,1 @@
+$("li.task_" + "<%= @task.id %>").replaceWith("<%= j render('form', project: @task.project) %>")

@@ -10,6 +10,7 @@ describe "Projects" do
   it "create project", js: true do
     visit projects_path
     create_project
+    visit projects_path
     expect(page).to have_content("Alpha Project")
   end
 
@@ -19,14 +20,15 @@ describe "Projects" do
     click_link "Edit"
     fill_in "project_name", with: "Another project"
     click_button "Update Project"
+    visit projects_path
     expect(page).to have_content("Another project") 
   end
 
   it "delete project", js: true do
     project = create(:project)
     visit projects_path
-    #save_and_open_page
     click_link "Remove"
+    visit projects_path
     expect(page).not_to have_content(project.name)
   end
 
@@ -45,17 +47,21 @@ describe "Tasks" do
     create_project
     expect(page).to have_content("Alpha Project")
     create_task
+    visit projects_path
     expect(page).to have_content("Alpha Task")
   end
 
-  it "edit task" do
+  it "edit task", js: true do
     project = create(:project)
     task = create(:task)
     visit projects_path
-    click_link "Edit Task"
-    fill_in "task_name", with: "Task changed"
-    click_button "Update Task"
-    expect(page).to have_content("Task changed") 
+    click_link "Edit T"
+    within(".edit_task") do
+      fill_in "task_name", with: "Edited task"
+      click_button "Update Task"
+    end
+    visit projects_path
+    expect(page).to have_content("Edited task")
   end
 
   it "delete task", js: true do
@@ -63,6 +69,7 @@ describe "Tasks" do
     create_project
     create_task
     click_link "x"
+    visit projects_path
     expect(page).not_to have_content("Alpha Task")
   end
 end

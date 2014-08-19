@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_action :new_task, only: [:index, :create]
   def index
     @projects = Project.all
   end
@@ -17,6 +18,7 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    respond_to :js 
   end
 
   def update
@@ -37,5 +39,9 @@ class ProjectsController < ApplicationController
 
     def project_params
       params.require(:project).permit(:name)
+    end
+
+    def new_task
+      @task = Task.new
     end
 end

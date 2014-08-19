@@ -11,6 +11,16 @@ class TasksController < ApplicationController
     respond_to :js
   end
 
+  def update
+    @task = Task.find(params[:id])
+    if @task.update(task_params)
+      respond_to :js
+    else
+      render root_path
+    end
+    
+  end
+
   def destroy
     @task = Task.find(params[:id])
     if @task.destroy
