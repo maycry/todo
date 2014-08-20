@@ -18,7 +18,13 @@ class TasksController < ApplicationController
     else
       render root_path
     end
-    
+  end
+
+  def toggle_status
+    @task = Task.find(params[:id])
+    if @task.toggle_complete
+      respond_to :js
+    end
   end
 
   def destroy

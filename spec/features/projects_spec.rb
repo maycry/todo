@@ -64,6 +64,14 @@ describe "Tasks" do
     expect(page).to have_content("Edited task")
   end
 
+  it " mark as complete", js: true do
+    project = create(:project)
+    task = create(:task)
+    visit projects_path
+    check "task_1"
+    expect(page).to have_css('.complete')
+  end
+
   it "delete task", js: true do
     visit projects_path
     create_project

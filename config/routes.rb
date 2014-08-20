@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :projects
-  resources :tasks
+  resources :tasks do
+    post "toggle_status", on: :member
+  end
   root 'projects#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
