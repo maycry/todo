@@ -1,3 +1,3 @@
-$(".project-item[data-id='"+"<%= @task.project.id %>" + "'] ul").append("<%= j render('task', task:@task) %>")
+$(".project-item[data-id='"+"<%= @task.project.id %>" + "'] ul").prepend("<%= j render('task', task:@task) %>")
 $(".project-item[data-id='"+"<%= @task.project.id %>" + "'] form #task_name").val("")
 $(".project-item[data-id='"+"<%= @task.project.id %>" + "'] form #task_name").focus()

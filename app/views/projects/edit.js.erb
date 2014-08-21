@@ -1,1 +1,3 @@
-$(".project-item[data-id='" + "<%= @project.id%>" + "'] .project-header").replaceWith("<%= j render('form') %>")
+$(".project-item[data-id='" + "<%= @project.id%>" + "'] .project-header").addClass("hidev")
+$(".project-item[data-id='" + "<%= @project.id%>" + "'] .project-header").append("<%= j render('form') %>")
+$(".project-item[data-id='" + "<%= @project.id%>" + "'] .create-project-form input").focus()

@@ -1,6 +1,24 @@
+*{box-sizing: border-box}
 @font-face {
   font-family: 'Intro';    
   src: font-url('intro.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+}
+
+html, body{
+  font-family: Consolas;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+.hidev{
+  visibility: none;
+}
+
+.hide{
+  display: none;
 }

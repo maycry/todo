@@ -1,9 +1,54 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.project-item{
+  position:relative;
+  width: 65%;
+  border: 10px #2175e7 solid;
+  margin: 4% 8%;
+  padding-bottom: 2vw;
+  .project_title{
+    display: block;
+    text-decoration: none;
+    font-family: Intro, sans-serif;
+    font-size: 4.6vw;
+    letter-spacing: .5vw;
+    color: #2175e7;
+    margin-left: 4.5vw;
+    line-height: 3vw;
+    margin-top: 4.7vw;
+    margin-bottom: 2.5vw;
+    width:60vw;
+    white-space: nowrap;
+  }
+}
+
+.create-project-form{
+  position: absolute;
+  z-index: 2;
+  background-color: white;
+  top: 0;
+  .field input{
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    display: block;
+    font-family: Intro, sans-serif;
+    font-size: 4.6vw;
+    letter-spacing: .5vw;
+    color: #2175e7;
+    margin-left: 4.5vw;
+    line-height: 3vw;
+    margin-top: 3.8vw;
+    margin-bottom: 1.75vw;
+    width: 60vw;
+  }
+}
 
 .create-list{
-  position: absolute;
+  position: fixed;
   width: 20vh;
   height: 100%;
   border-left: 10px #f2f2f2 solid;

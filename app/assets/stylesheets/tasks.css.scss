@@ -5,3 +5,56 @@
 .complete{
   color: grey
 }
+.create-task{
+    padding-bottom: 1.1vw;
+    width: 60vw;
+  .create-task-name{
+    padding-left: 5.8vw;
+    box-shadow: 6px 6px 0 rgba(black, .05);
+    margin-left: -3vw;
+    background-color: white;
+    input{
+      border: none;
+      font-size: 1.9vw;
+      padding: 18px 20px 12px 0;
+      width: 90%;
+      outline: none;
+      &::-webkit-input-placeholder {
+        color: #dadada;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+    }
+  }
+}
+
+.task{
+  margin-left: -3vw;
+  font-size: 1.9vw;
+  list-style: none;
+  padding: 1.4vw 1.1vw 1vw 5.8vw;
+  width: 63vw;
+  display: block;
+  position: relative;
+  .checkmark{
+    position: absolute;
+    top: 1.3vw;
+    left: 1.5vw;
+    width: 31px;
+    height: 25px;
+    background-image: image-url('checkmark.png');
+    background-size: 31px 25px;
+    display: none;
+  }
+  &:hover .checkmark{
+    display: block;
+  }
+  &:hover{
+    background-color: white;
+    box-shadow: 6px 6px 0 rgba(black, .05);
+  }
+  .task-complete-checkbox{
+    display:inline-block;
+    width: 50px;
+  }
+}

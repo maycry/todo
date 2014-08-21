@@ -1,6 +1,17 @@
-<li class="task_<%= task.id %> <%= 'complete' if !task_status?(task.status)%>">
-  <%= check_box_tag "task_#{task.id}", 1, !task_status?(task.status), data: { remote: true, url: url_for(controller: :tasks, action: :toggle_status, id: task.id), method: :post} %>
+<% if task_status?(task.status) %>
+<li class="task task_<%= task.id %> <%= 'complete' if !task_status?(task.status)%>">
+  <%= link_to "", toggle_status_task_path(task), remote: true, method: :post, class: "checkmark" %>
+<!--   <%= check_box_tag "task_#{task.id}", 1, !task_status?(task.status), class: "hide", data: { remote: true,  url: url_for(controller: :tasks, action: :toggle_status, id: task.id), method: :post} %> -->
+   <!-- <div class="task-complete-checkbox"></div> -->
+
+
   <%= task.name %>
+
+
+
+<!-- 
   <%= link_to "Edit T", edit_task_path(task), remote: true %>
   <%= link_to "x", task, method: :delete, remote: true %>
+   -->
 </li>
+<% end %>

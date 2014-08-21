@@ -1,10 +1,11 @@
+<div class="create-project-form">
 <%= form_for(@project, remote: 'true') do |f| %>
   <div class="field">
     <%= f.text_field :name, placeholder: 'Enter title' %>
   </div>
 
-   <div class="actions">
+  <!-- <div class="actions">
     <%= f.submit %>
-  </div>
-  
+  </div> -->
 <% end %>
+</div>
