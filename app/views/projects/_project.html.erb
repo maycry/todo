@@ -1,6 +1,11 @@
-<div class="project-item" data-id="<%= project.id %>">
-  <%= render 'project_header', project: project %>
-  <%= render 'tasks/form', project: project %>
+<div class="project-item" data-id="<%= project.id unless project.new_record? %>">
+  <%= link_to "", project, method: :delete, remote: true, class: "project-delete" %>
+  <% if project.new_record? %>
+    <%= render 'form', project: project %>
+  <% else %>
+    <%= render 'project_header', project: project %>
+  <% end %>
+  <%= render('tasks/form', project: project) %>
   <ul>
     <%= render project.tasks %>
   </ul>

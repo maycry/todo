@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :new_task, only: [:index, :create]
+  before_action :new_task, only: [:index, :create, :new]
   def index
     @projects = Project.all
   end
