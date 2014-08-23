@@ -6,7 +6,7 @@
     <%= render 'project_header', project: project %>
   <% end %>
   <%= render('tasks/form', project: project) %>
-  <ul>
+  <ul class="tasks-list">
     <%= render project.tasks %>
   </ul>
 </div>

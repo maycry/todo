@@ -28,8 +28,14 @@
     }
   }
 }
-
-.task{
+.ui-state-highlight:after{
+  content: "-";
+  color: yellow;
+}
+.ui-state-highlight{
+  background-color: yellow;
+}
+.task,.ui-state-highlight{
   margin-left: -3vw;
   font-size: 1.9vw;
   list-style: none;
@@ -37,6 +43,7 @@
   width: 63vw;
   display: block;
   position: relative;
+  cursor: move;
   .checkmark{
     position: absolute;
     top: 1.3vw;
