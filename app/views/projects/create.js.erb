@@ -1,3 +1,2 @@
-$(".project-item:first .create-project-form").remove()
-$(".project-item:first .project-title").html('<%= @project.name%>')
-$(".project-item:first").prepend('<%= j render("project_header", project: @project)%>')
+$(".project-item:first").remove()
+$(".projects-list").prepend('<%= j render("project", project: @project)%>')

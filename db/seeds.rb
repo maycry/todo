@@ -10,13 +10,13 @@ Project.create name: "Alpha"
 Project.create name: "Beta"
 Project.create name: "Gamma"
 Project.create name: "Tetta"
-Task.create name: "Task number one", status: "incomplete", project_id: "1"
-Task.create name: "Task number two", status: "incomplete", project_id: "1"
-Task.create name: "Task number three", status: "incomplete", project_id: "1"
-Task.create name: "Task number one", status: "incomplete", project_id: "2"
-Task.create name: "Task number two", status: "incomplete", project_id: "2"
-Task.create name: "Task number one", status: "incomplete", project_id: "3"
-Task.create name: "Task number two", status: "incomplete", project_id: "3"
-Task.create name: "Task number three", status: "incomplete", project_id: "3"
-Task.create name: "Task number one", status: "incomplete", project_id: "4"
-Task.create name: "Task number two", status: "incomplete", project_id: "4"
+Task.create name: "Task number one", status: "incomplete", project_id: "1", position: 1
+Task.create name: "Task number two", status: "incomplete", project_id: "1", position: 2
+Task.create name: "Task number three", status: "incomplete", project_id: "1", position: 3
+Task.create name: "Task number one", status: "incomplete", project_id: "2", position: 1
+Task.create name: "Task number two", status: "incomplete", project_id: "2", position: 2
+Task.create name: "Task number one", status: "incomplete", project_id: "3", position: 1
+Task.create name: "Task number two", status: "incomplete", project_id: "3", position: 2
+Task.create name: "Task number three", status: "incomplete", project_id: "3", position: 3
+Task.create name: "Task number one", status: "incomplete", project_id: "4", position: 1
+Task.create name: "Task number two", status: "incomplete", project_id: "4", position: 2

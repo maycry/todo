@@ -34,6 +34,13 @@ class TasksController < ApplicationController
     end
   end
 
+  def sort
+    params[:task].each_with_index do |id, index|
+      Task.find(id).update_attribute("position", index+1)
+    end
+    render nothing: true
+  end
+
   private
 
     def task_params

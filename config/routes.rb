@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :tasks do
     post "toggle_status", on: :member
+    post "sort", on: :collection
   end
   root 'projects#index'
   # The priority is based upon order of creation: first created -> highest priority.

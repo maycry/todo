@@ -1,12 +1,8 @@
 <div class="project-item" data-id="<%= project.id unless project.new_record? %>">
   <%= link_to "", project, method: :delete, remote: true, class: "project-delete" %>
-  <% if project.new_record? %>
-    <%= render 'form', project: project %>
-  <% else %>
-    <%= render 'project_header', project: project %>
-  <% end %>
+  <%= render 'form', project: project %>
   <%= render('tasks/form', project: project) %>
-  <ul class="tasks-list">
+  <ul class="tasks-list" data-update-url="<%= sort_tasks_url %>">
     <%= render project.tasks %>
   </ul>
 </div>
