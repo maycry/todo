@@ -44,6 +44,10 @@
   display: block;
   position: relative;
   cursor: move;
+  input{
+    border: none;
+    outline: none;
+  }
   .checkmark{
     position: absolute;
     top: 1.3vw;

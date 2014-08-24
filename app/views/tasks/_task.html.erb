@@ -4,10 +4,14 @@
 <!--   <%= check_box_tag "task_#{task.id}", 1, !task_status?(task.status), class: "hide", data: { remote: true,  url: url_for(controller: :tasks, action: :toggle_status, id: task.id), method: :post} %> -->
    <!-- <div class="task-complete-checkbox"></div> -->
 
-
-  <%= task.name %>
-
-
+  <%= form_for(task, remote: true) do |f| %>
+    <div class="create-task-name">
+      <%= f.text_field :name %>   
+    </div>
+<!-- 
+    <%= f.submit %>
+     -->
+  <% end %>
 
 <!-- 
   <%= link_to "Edit T", edit_task_path(task), remote: true %>

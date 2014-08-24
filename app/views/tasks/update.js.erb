@@ -1,1 +1,2 @@
-$("form#edit_task_" + "<%= @task.id%>").replaceWith("<%= j render('task', task:@task) %>")
+/*$("form#edit_task_" + "<%= @task.id%>").replaceWith("<%= j render('task', task:@task) %>")*/
+$("form#edit_task_" + "<%= @task.id%> .create-task-name #task_name").blur()
