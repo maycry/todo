@@ -1,5 +1,5 @@
 <div class="project-item" data-id="<%= project.id unless project.new_record? %>">
-  <%= link_to "", project, method: :delete, remote: true, class: "project-delete" %>
+  <%= link_to "Delete", project, method: :delete, remote: true, class: "project-delete" %>
   <%= render 'form', project: project %>
   <%= render('tasks/form', project: project) unless project.new_record? %>
   <ul class="tasks-list" data-update-url="<%= sort_tasks_url %>">

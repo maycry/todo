@@ -9,6 +9,7 @@
   padding-bottom: 2vw;
   min-height: 13vw;
   .project-delete{
+    text-indent: -9999px; 
     position: absolute;
     top: 20px;
     right: 20px;
@@ -16,10 +17,10 @@
     height: 42px;
     background-image: image-url('big-cross.png');
     background-size: 42px 42px;
-    display: none;
+    opacity: 0;
   }
   &:hover .project-delete{
-    display: block;
+    opacity: 1;
   }
   .project-title{
     display: block;
