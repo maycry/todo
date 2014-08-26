@@ -32,9 +32,7 @@
   content: "-";
   color: yellow;
 }
-.ui-state-highlight{
-  background-color: yellow;
-}
+
 .task,.ui-state-highlight{
   margin-left: -3vw;
   font-size: 1.9vw;
@@ -69,4 +67,9 @@
     display:inline-block;
     width: 50px;
   }
+}
+
+.ui-state-highlight{
+  background-color: yellow;
+  padding-top: 1.55vw;
 }

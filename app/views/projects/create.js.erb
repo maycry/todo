@@ -1,2 +1,10 @@
 $(".project-item:first").remove()
 $(".projects-list").prepend('<%= j render("project", project: @project)%>')
+
+$('.projects-list .project-item:first ul').sortable({
+    placeholder: "ui-state-highlight",
+    axis: "y",
+    update: function( event, ui ) {
+      $.post($(this).data('update-url'), $(this).sortable('serialize'))
+    }
+  });
