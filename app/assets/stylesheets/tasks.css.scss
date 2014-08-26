@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.complete{
-  color: grey
-}
 .create-task{
     padding-bottom: 1.1vw;
     width: 60vw;
@@ -18,8 +15,8 @@
       border: none;
       font-size: 1.9vw;
       padding: 18px 20px 12px 0;
-      width: 90%;
       outline: none;
+      width:90%;
       &::-webkit-input-placeholder {
         color: #dadada;
         text-transform: uppercase;
@@ -32,44 +29,82 @@
   content: "-";
   color: yellow;
 }
-
-.task,.ui-state-highlight{
-  margin-left: -3vw;
-  font-size: 1.9vw;
+.task{
   list-style: none;
-  padding: 1.4vw 1.1vw 1vw 5.8vw;
-  width: 63vw;
-  display: block;
-  position: relative;
-  cursor: move;
-  input{
-    border: none;
-    outline: none;
-  }
-  .checkmark{
-    position: absolute;
-    top: 1.3vw;
-    left: 1.5vw;
-    width: 31px;
-    height: 25px;
-    background-image: image-url('checkmark.png');
-    background-size: 31px 25px;
-    display: none;
-  }
-  &:hover .checkmark{
-    display: block;
-  }
-  &:hover{
+  padding: .5vw 0;
+  height: 5.3vw;
+  transition: transform .2s cubic-bezier(0.95, 0.05, 0.795, 0.035),
+              height .2s cubic-bezier(0.23, 1, 0.32, 1),
+              padding .2s cubic-bezier(0.95, 0.05, 0.795, 0.035),
+              opacity .2s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  &:hover .task-container{
     background-color: white;
     box-shadow: 6px 6px 0 rgba(black, .05);
   }
-  .task-complete-checkbox{
-    display:inline-block;
-    width: 50px;
+  &:hover .task-container .checkmark{
+    opacity: 1;
+  }
+  &:hover .task-container .drag{
+    opacity: 1;
+  }
+  &.complete{
+    transform: translateX(100vw);
+    opacity: 0;
+    padding: 0;
+  }
+  .task-container{
+    position: relative;
+    margin-left: -3vw;
+    font-size: 1.9vw;
+    padding: 0 1.1vw 0 5.8vw;
+    width: 63vw;
+    display: block;
+    height: 4.3vw;
+    line-height: 4.3vw;
+    opacity: 1;
+    transition: background-color .15s ease;
+
+    input{
+      border: none;
+      outline: none;
+      width: 54vw;
+    }
+    .drag{
+      height: 4.3vw;
+      width: 2.4vw;
+      position: absolute;
+      right: 0;
+      cursor: move;
+      background-color:white;
+      background-image: radial-gradient(#ccc 15%, transparent 1.5%),
+      radial-gradient(#ccc 15%, transparent 16%);
+      background-size:3px 3px;
+      background-position: 0 0, 30px 30px;
+      box-shadow: inset 0 0 0 5px white;
+      opacity: 0;
+      transition: opacity .15s ease;
+    }
+    .checkmark{
+      position: absolute;
+      top: 1.3vw;
+      left: 1.5vw;
+      width: 31px;
+      height: 25px;
+      background-image: image-url('checkmark.png');
+      background-size: 31px 25px;
+      opacity: 0;
+      transition: opacity .15s ease;
+    }
+    .task-complete-checkbox{
+      display:inline-block;
+      width: 50px;
+    }
   }
 }
-
 .ui-state-highlight{
   background-color: yellow;
-  padding-top: 1.55vw;
+  width: 60vw;
+  height: 4.3vw;
+  margin: .5vw 0;
+  list-style: none;
 }

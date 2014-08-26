@@ -5,6 +5,7 @@ $(document).ready(function() {
   $('.tasks-list').sortable({
       placeholder: "ui-state-highlight",
       axis: "y",
+      handle: ".drag",
       update: function( event, ui ) {
         $.post($(this).data('update-url'), $(this).sortable('serialize'))
       }

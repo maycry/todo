@@ -1,2 +1,2 @@
-$("li.task_" + "<%= @task.id %>").remove()
-/*$(".project-item[data-id='" + "<%= @task.project.id%>" + "'] ul").append("<%= j render('task', task:@task) %>")*/
+$("li.task_" + "<%= @task.id %>").addClass("complete")
+setTimeout(function(){$("li.task_" + "<%= @task.id %>").remove()}, 300)

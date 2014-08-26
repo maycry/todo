@@ -1,11 +1,13 @@
 <% if task_status?(task.status) %>
-<li class="task task_<%= task.id %> <%= 'complete' if !task_status?(task.status)%>" id='<%= "task_#{task.id}" %>'>
+<li class="task task_<%= task.id %>" id='<%= "task_#{task.id}" %>'>
+  <div class="task-container">
   <%= link_to "", toggle_status_task_path(task), remote: true, method: :post, class: "checkmark" %>
-
+  <div class="drag"></div>
   <%= form_for(task, remote: true) do |f| %>
     <div class="create-task-name">
       <%= f.text_field :name %>   
     </div>
   <% end %>
+  </div>
 </li>
 <% end %>
