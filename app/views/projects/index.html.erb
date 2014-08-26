@@ -1,10 +1,13 @@
+<div class="container">
 <div class="projects-list">
   <%= render @projects %>
 </div>
+<span class="email"><%= current_user.email %></span>
+<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "logout"%>
 
-
-  <%= link_to new_project_path, remote: :true , id: "add-project" do%>
-    <div class="create-list">
-      <span>Create new list</span>
-    </div>
-  <% end %>
+<%= link_to new_project_path, remote: :true , id: "add-project" do%>
+  <div class="create-list">
+    <span>Create new list</span>
+  </div>
+<% end %>
+</div>

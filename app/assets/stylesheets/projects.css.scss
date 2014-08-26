@@ -1,11 +1,14 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.project-item{
-  position:relative;
+.container{
+  margin: 0 8%;
   width: 65%;
+}
+.project-item{
+  margin: 7vw 0;
+  position:relative;
   border: 10px #2175e7 solid;
-  margin: 4% 8%;
   padding-bottom: 2vw;
   min-height: 13vw;
   .project-delete{
