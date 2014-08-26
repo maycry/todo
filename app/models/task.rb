@@ -14,6 +14,6 @@ class Task < ActiveRecord::Base
   end
 
   def set_position
-    Task.last.move_to_top
+    self.move_to_top
   end
 end
