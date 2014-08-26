@@ -3,31 +3,29 @@ require 'spec_helper'
 describe "Projects" do
   it "displays project" do
     project = create(:project)
-    visit projects_path
+    visit root_path
     expect(page).to have_selector(".create-project-form input[value='#{project.name}']")
   end
 
-#   it "create project", js: true do
-#     visit projects_path
-#     create_project
-#     visit projects_path
-#     expect(page).to have_content("Alpha Project")
-#   end
+  # it "create project", js: true do
+  #   visit root_path
+  #   create_project
+  #   visit root_path
+  #   expect(page).to have_selector(".create-project-form input[value='Alpha Project']")
+  # end
 
-#   it "edit project", js: true do
-#     project = create(:project)
-#     visit projects_path
-#     click_link "Edit"
-#     fill_in "project_name", with: "Another project"
-#     click_button "Update Project"
-#     visit projects_path
-#     expect(page).to have_content("Another project") 
-#   end
+  # it "edit project", js: true do
+  #   project = create(:project)
+  #   visit root_path
+  #   fill_in "project_name", with: "Another project"
+  #   click_button "Update Project"
+  #   visit root_path
+  #   expect(page).to have_selector(".create-project-form input[value='Another project']")
+  # end
 
   it "delete project", js: true do
     project = create(:project)
-    visit projects_path
-    save_and_open_page
+    visit root_path
     click_link "Delete"
     expect(page).not_to have_selector(".project-item")
   end
@@ -83,7 +81,7 @@ describe "Projects" do
  end
 
 def create_project
-  click_link "Add Project"
+  click_link "Create new list"
   fill_in "project_name", with: "Alpha Project"
   click_button "Create Project"
 end

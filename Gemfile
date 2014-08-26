@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'acts_as_list', '~> 0.4.0'
+gem 'devise', '~> 3.3.0'
 
 group :development do
   gem "better_errors", "~> 1.1.0"

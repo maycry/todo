@@ -22,3 +22,16 @@ ul{
 .hide{
   display: none;
 }
+
+.notvis{
+  position: absolute; 
+  left: -9999px; 
+  width: 1px; 
+  height: 1px;
+}
+.notvis1{
+  position: absolute; 
+  left: -9599px; 
+  width: 1px; 
+  height: 1px;
+}
