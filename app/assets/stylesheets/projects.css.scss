@@ -3,14 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .container{
   margin: 0 8%;
-  width: 65%;
+  width: 65vw;
 }
+/* .project-item:nth-child(2n){
+  border-color: #f1ea1d;
+  margin-left: 4vw;
+  .create-project-form .field input{
+    color: #f1ea1d;
+  }
+}
+.project-item:nth-child(3n){
+  border-color: #ee2ae2;
+  .create-project-form .field input{
+    color: #ee2ae2;
+  }
+} */
 .project-item{
   margin: 7vw 0;
   position:relative;
   border: 10px #2175e7 solid;
   padding-bottom: 2vw;
   min-height: 13vw;
+  width: 65vw;
   .project-delete{
     text-indent: -9999px; 
     position: absolute;
@@ -24,21 +38,6 @@
   }
   &:hover .project-delete{
     opacity: 1;
-  }
-  .project-title{
-    display: block;
-    position: absolute;
-    text-decoration: none;
-    font-family: Intro, sans-serif;
-    font-size: 4.6vw;
-    letter-spacing: .5vw;
-    color: #2175e7;
-    margin-left: 4.5vw;
-    line-height: 3vw;
-    margin-top: 4.7vw;
-    margin-bottom: 2.5vw;
-    width:60vw;
-    white-space: nowrap;
   }
 }
 

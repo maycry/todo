@@ -14,6 +14,8 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     if @project.save 
       respond_to :js 
+    else
+      render nothing: true
     end
   end
 
@@ -26,6 +28,8 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     if @project.update(project_params)
       respond_to :js 
+    else
+      render nothing: true
     end
   end
 

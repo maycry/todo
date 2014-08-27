@@ -4,6 +4,8 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     if @task.save
       respond_to :js
+    else
+      render nothing: true
     end
   end
 
@@ -17,7 +19,7 @@ class TasksController < ApplicationController
     if @task.update(task_params)
       respond_to :js
     else
-      render root_path
+      render nothing: true
     end
   end
 
