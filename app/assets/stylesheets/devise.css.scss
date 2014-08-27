@@ -49,3 +49,17 @@ h2{
     }
   }
 }
+
+.user{
+  padding: 4vw 0;
+  .logout, .email{
+    font-family: Intro, sans-serif;
+    font-size: 1.5vw;
+    letter-spacing: .1vw;
+    color: #ddd;
+    padding-right: .5vw;
+  }
+  .logout:hover{
+      color: black;
+    }
+}

@@ -39,17 +39,6 @@ ul{
 .wrapper{
   margin: 0 auto;
 }
-.logout, .email{
-  font-family: Intro, sans-serif;
-  font-size: 1.5vw;
-  letter-spacing: .1vw;
-  color: #ddd;
-  padding: 4vw 0;
-  padding-right: .5vw;
-}
-.logout:hover{
-    color: black;
-  }
 
 .notice, .alert{
   border: 10px #ee2ae2 solid;
