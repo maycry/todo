@@ -41,12 +41,14 @@ ul{
 }
 
 .notice, .alert{
-  border: 10px #ee2ae2 solid;
-  background-color: yellow;
+  background-color: rgb(7, 233, 52);
   border-top: none;
   width: 100%;
   padding: 2vw;
   margin:0;
+}
+.alert{
+  background-color: rgb(255, 82, 131);
 }
 .wrapper{
   .notice, .alert{
