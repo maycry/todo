@@ -6,7 +6,6 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'normalize-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'pg', group: :production
 gem 'jquery-rails'
 gem "jquery-ui-rails"
 gem 'turbolinks'
@@ -35,5 +34,10 @@ group :test do
   gem 'database_cleaner', '~> 1.3.0'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'capybara-webkit', '~> 1.3.0'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
