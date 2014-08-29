@@ -78,10 +78,10 @@
     }
     .checkmark{
       position: absolute;
-      top: .7vw;
+      top: -.5vw;
       left: 1.5vw;
       width: 40px;
-      height: 40px;
+      height: 5.3vw;
       background-image: image-url('checkmark.png');
       background-size: 31px 25px;
       background-position: 50% 50%;
@@ -91,10 +91,10 @@
     .task-delete{
       position: absolute;
       right: -4vw;
-      top: 0.8vw;
+      top: -.2vw;
       display: block;
       width: 3vw;
-      height: 3vw;
+      height: 5.3vw;
       opacity: 0;
       &:after, &:before{
         content: "";
@@ -102,7 +102,7 @@
         position: absolute;
         background-color: #f2f2f2;
         left: 1.2vw;
-        top: .5vw;
+        top: 1.8vw;
         width: 0.4vw;
         height: 2vw;
         transform: rotateZ(45deg);

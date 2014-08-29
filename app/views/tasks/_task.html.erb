@@ -1,4 +1,4 @@
-<li class="task task_<%= task.id %>" id='<%= "task_#{task.id}" %>' data-position='<%= "#{task.position}" %>'>
+<li class="task task_<%= task.id %>" id='<%= "task_#{task.id}" %>'>
   <div class="task-container">
   <%= link_to "", toggle_status_task_path(task), remote: true, method: :post, class: "checkmark" %>
   <div class="drag"></div>

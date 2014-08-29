@@ -39,7 +39,7 @@ class TasksController < ApplicationController
 
   def sort
     params[:task].each_with_index do |id, index|
-      Task.find(id).update_attribute("position", index+1)
+      Task.where(id: id).update_all(position: index+1)
     end
     render nothing: true
   end
