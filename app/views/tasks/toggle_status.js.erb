@@ -1,2 +1,6 @@
-$("li.task_" + "<%= @task.id %>").addClass("complete")
-setTimeout(function(){$("li.task_" + "<%= @task.id %>").remove()}, 300)
+$("li.task_" + "<%= @task.id %>").remove()
+if ("<%= @task.status %>" == "complete") {
+  $(".project-item[data-id='" + "<%= @task.project.id %>" + "'] .tasks-list-complete").prepend("<%= j render 'task', task: @task%>")
+} else {
+  $(".project-item[data-id='" + "<%= @task.project.id %>" + "'] .tasks-list").append("<%= j render 'task', task: @task%>")
+};

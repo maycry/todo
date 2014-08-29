@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .container{
   margin: 0 8%;
-  width: 65vw;
+  width: 70vw;
 }
 /* .project-item:nth-child(2n){
   border-color: #f1ea1d;
@@ -21,23 +21,40 @@
 .project-item{
   margin: 7vw 0;
   position:relative;
-  border: 10px #2175e7 solid;
-  padding-bottom: 2vw;
-  min-height: 13vw;
-  width: 65vw;
-  .project-delete{
-    text-indent: -9999px; 
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 42px;
-    height: 42px;
-    background-image: image-url('big-cross.png');
-    background-size: 42px 42px;
-    opacity: 0;
-  }
-  &:hover .project-delete{
-    opacity: 1;
+  padding-right: 5vw;
+  .project-container{
+    border: 10px #2175e7 solid;
+    padding-bottom: 2vw;
+    min-height: 13vw;
+    .project-delete{
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: block;
+      width: 5vw;
+      height: 5vw;
+      &:after, &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: #f2f2f2;
+        left: 3vw;
+        width: 0.8vw;
+        height: 4vw;
+        transform: rotateZ(45deg);
+        transition: all .2s cubic-bezier(0.77, 0, 0.175, 1);
+      }
+      &:before{
+        transform: rotateZ(45deg);
+      }
+      &:hover:after{
+        transform: rotateZ(-45deg);
+        background-color: rgb(255, 82, 131);
+      }
+      &:hover:before{
+        background-color: rgb(255, 82, 131);
+      }
+    }
   }
 }
 
@@ -46,7 +63,7 @@
   z-index: 2;
   background-color: white;
   width: 58vw;
-  top: 0;
+  top: 10px;
   .field input{
     padding: 0;
     margin: 0;

@@ -1,8 +1,8 @@
-<% if task_status?(task.status) %>
-<li class="task task_<%= task.id %>" id='<%= "task_#{task.id}" %>'>
+<li class="task task_<%= task.id %>" id='<%= "task_#{task.id}" %>' data-position='<%= "#{task.position}" %>'>
   <div class="task-container">
   <%= link_to "", toggle_status_task_path(task), remote: true, method: :post, class: "checkmark" %>
   <div class="drag"></div>
+  <%= link_to "",task, method: :delete, remote: true, class: "task-delete"%>
   <%= form_for(task, remote: true) do |f| %>
     <div class="create-task-name">
       <%= f.text_field :name %>   
@@ -10,4 +10,3 @@
   <% end %>
   </div>
 </li>
-<% end %>

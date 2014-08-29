@@ -4,13 +4,12 @@ class Task < ActiveRecord::Base
   acts_as_list scope: :project
   after_create :set_position
 
-  default_scope { order('position ASC') }
-
   def toggle_complete
     if status == "incomplete"
       update status: "complete"
     else
       update status: "incomplete"
+      self.move_to_bottom
     end
   end
 

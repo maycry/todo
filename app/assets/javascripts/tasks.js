@@ -8,6 +8,9 @@ $(document).ready(function() {
       handle: ".drag",
       update: function( event, ui ) {
         $.post($(this).data('update-url'), $(this).sortable('serialize'))
+        $(this).find("li").each(function(index, el) {
+          $(this).attr("data-position", index+1)
+        });
       }
     });
 });
